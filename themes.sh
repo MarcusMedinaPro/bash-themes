@@ -91,12 +91,12 @@ theme() {
                     _apply_colorscheme $COLORSCHEME_MSDOS
                     ;;
                 "")
-                    echo "Tillgängliga konsoler: $consoles"
-                    echo "Användning: theme console <namn>"
+                    echo "Available consoles: $consoles"
+                    echo "Usage: theme console <name>"
                     ;;
                 *)
-                    echo "Okänd konsol: '$2'"
-                    echo "Tillgängliga konsoler: $consoles"
+                    echo "Unknown console: '$2'"
+                    echo "Available consoles: $consoles"
                     return 1
                     ;;
             esac
@@ -116,12 +116,12 @@ theme() {
                     _apply_colorscheme $COLORSCHEME_STARTREK
                     ;;
                 "")
-                    echo "Tillgängliga filmer: $movies"
-                    echo "Användning: theme movie <namn>"
+                    echo "Available films: $movies"
+                    echo "Usage: theme movie <name>"
                     ;;
                 *)
-                    echo "Okänd film: '$2'"
-                    echo "Tillgängliga filmer: $movies"
+                    echo "Unknown film: '$2'"
+                    echo "Available films: $movies"
                     return 1
                     ;;
             esac
@@ -135,12 +135,12 @@ theme() {
                     _apply_colorscheme $COLORSCHEME_HALLOWEEN
                     ;;
                 "")
-                    echo "Tillgängliga säsonger: $seasons"
-                    echo "Användning: theme season <namn>"
+                    echo "Available seasons: $seasons"
+                    echo "Usage: theme season <name>"
                     ;;
                 *)
-                    echo "Okänd säsong: '$2'"
-                    echo "Tillgängliga säsonger: $seasons"
+                    echo "Unknown season: '$2'"
+                    echo "Available seasons: $seasons"
                     return 1
                     ;;
             esac
@@ -163,15 +163,15 @@ theme() {
         swiftie)
             local era="$2"
             if [ -z "$era" ]; then
-                echo "Tillgängliga Swiftie-eror: $eras"
-                echo "Användning: theme swiftie <era>"
+                echo "Available Swiftie eras: $eras"
+                echo "Usage: theme swiftie <era>"
                 return 0
             fi
             local varname="COLORSCHEME_SWIFTIE_$(echo "$era" | tr '[:lower:]' '[:upper:]')"
             local scheme="${!varname}"
             if [ -z "$scheme" ]; then
-                echo "Okänd era: '$era'"
-                echo "Tillgängliga eror: $eras"
+                echo "Unknown era: '$era'"
+                echo "Available eras: $eras"
                 return 1
             fi
             _apply_colorscheme $scheme
@@ -180,25 +180,25 @@ theme() {
             _reset_colorscheme
             ;;
         ""|help|list|-h|--help)
-            echo "Användning: theme <kategori> <namn>"
+            echo "Usage: theme <category> <name>"
             echo ""
-            echo "Kategorier:"
-            echo "  console <namn>   - $consoles"
-            echo "  movie <namn>     - $movies"
-            echo "  season <namn>    - $seasons"
+            echo "Categories:"
+            echo "  console <name>   - $consoles"
+            echo "  movie <name>     - $movies"
+            echo "  season <name>    - $seasons"
             echo "  swiftie <era>    - $eras"
             echo ""
-            echo "Fristående teman:"
+            echo "Standalone themes:"
             echo "  synthwave        - Neon retrowave (alias: vaporwave)"
             echo "  dracula          - Dracula"
             echo "  nord             - Nord"
             echo "  gruvbox          - Gruvbox dark"
-            echo "  unicorn          - Pastell/neon plast-enhörning"
-            echo "  reset            - Återställ till terminalens default"
+            echo "  unicorn          - Pastel/neon plastic unicorn"
+            echo "  reset            - Reset to the terminal's default"
             ;;
         *)
-            echo "Okänt tema: '$1'"
-            echo "Kör 'theme help' för en lista över teman."
+            echo "Unknown theme: '$1'"
+            echo "Run 'theme help' for a list of themes."
             return 1
             ;;
     esac
