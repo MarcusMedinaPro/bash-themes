@@ -1,6 +1,6 @@
 # bash-themes
 
-Live terminal color themes for Bash, switchable on the fly via OSC escape sequences — no theme files, no terminal restart, no config reload.
+Live terminal colour themes for Bash, switchable on the fly via OSC escape sequences — no theme files, no terminal restart, no config reload.
 
 ```bash
 theme console c64
@@ -12,10 +12,10 @@ theme reset
 
 ## How it works
 
-Modern terminal emulators support [OSC](https://en.wikipedia.org/wiki/ANSI_escape_code#OSC) escape sequences for changing colors at runtime:
+Modern terminal emulators support [OSC](https://en.wikipedia.org/wiki/ANSI_escape_code#OSC) escape sequences for changing colours at runtime:
 
-- `OSC 10` / `11` / `12` — foreground, background, cursor color
-- `OSC 4`  — the 16-color ANSI palette (colors 0–15)
+- `OSC 10` / `11` / `12` — foreground, background, cursor colour
+- `OSC 4`  — the 16-colour ANSI palette (colours 0–15)
 
 `theme.sh` defines a single `theme` function that emits these sequences for a chosen palette. The change is instant and applies only to the current terminal session — close the tab/window (or run `theme reset`) and you're back to your terminal's default.
 
@@ -58,10 +58,14 @@ theme help
 
 ## Notes
 
-- `zx81` is intentionally monochrome (black & white) — the real ZX81 had no color output.
-- The Swiftie palettes are derived from the official album palettes at [taylor.wjakethompson.com](https://taylor.wjakethompson.com/reference/album_palettes.html).
+- `zx81` is intentionally monochrome (black & white) — the real ZX81 had no colour output.
 - `theme help` always prints the current list of categories and names.
 
-## License
+## Credits
+
+- The Swiftie palettes are based on the album palettes from Jake Thompson's [`taylor`](https://github.com/wjakethompson/taylor) R package, specifically [`taylor-album-palettes.R`](https://github.com/wjakethompson/taylor/blob/v4.0.0/R/taylor-album-palettes.R), via [taylor.wjakethompson.com](https://taylor.wjakethompson.com/reference/album_palettes.html).
+- [Dracula](https://draculatheme.com/) and [Nord](https://www.nordtheme.com/) are well-known community colour schemes; credit to their respective authors.
+
+## Licence
 
 MIT
